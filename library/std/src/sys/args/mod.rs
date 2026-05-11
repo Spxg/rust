@@ -10,6 +10,7 @@
     target_os = "uefi",
     target_os = "wasi",
     target_os = "xous",
+    target_env = "wabi"
 ))]
 mod common;
 
@@ -56,6 +57,10 @@ cfg_select! {
     target_os = "zkvm" => {
         mod zkvm;
         pub use zkvm::*;
+    }
+    target_env = "wabi" => {
+        mod wabi;
+        pub use wabi::*;
     }
     _ => {
         mod unsupported;

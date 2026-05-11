@@ -234,6 +234,11 @@ than building it.
             continue;
         }
 
+        // We don't use a C compiler on `wabi` target_env
+        if target.contains("wabi") {
+            continue;
+        }
+
         // We don't use a C compiler on wasm32
         if target.contains("wasm32") {
             continue;

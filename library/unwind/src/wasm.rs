@@ -16,7 +16,7 @@
 // targets, this symbol should be defined by the external toolchain. In
 // particular, defining this on Emscripten would break Emscripten dynamic
 // libraries.
-#[cfg(all(target_os = "unknown", panic = "unwind"))]
+#[cfg(all(any(target_os = "unknown", target_env = "wabi"), panic = "unwind"))]
 core::arch::global_asm!(
     ".globl __cpp_exception",
     #[cfg(target_pointer_width = "64")]

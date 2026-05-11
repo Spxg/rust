@@ -436,6 +436,8 @@ target | std | host | notes
 [`thumbv8m.main-nuttx-eabihf`](platform-support/nuttx.md) | ✓ |  | ARMv8M Mainline with NuttX, hardfloat
 [`thumbv8r-none-eabihf`](platform-support/armv8r-none-eabihf.md) | * |  | Thumb-mode Bare Armv8-R, hardfloat
 [`wasm64-unknown-unknown`](platform-support/wasm64-unknown-unknown.md) | ? |  | WebAssembly
+[`wasm64-web-wabi`](platform-support/wasm64-web-wabi.md) | ✓ |  | WebAssembly with wabi and 64-bit memories
+[`wasm32-web-wabi`](platform-support/wasm32-web-wabi.md) | ✓ |  | WebAssembly with wabi
 [`wasm32-wali-linux-musl`](platform-support/wasm32-wali-linux.md) | ? |  | WebAssembly with [WALI](https://github.com/arjunr2/WALI)
 [`wasm32-wasip3`](platform-support/wasm32-wasip3.md) | ✓ |  | WebAssembly with WASIp3
 [`x86_64-apple-tvos`](platform-support/apple-tvos.md) | ✓ |  | x86 64-bit tvOS

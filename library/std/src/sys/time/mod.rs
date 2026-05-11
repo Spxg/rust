@@ -44,6 +44,10 @@ cfg_select! {
         mod xous;
         use xous as imp;
     }
+    target_env = "wabi" => {
+        mod wabi;
+        use wabi as imp;
+    }
     _ => {
         mod unsupported;
         use unsupported as imp;

@@ -36,7 +36,11 @@ cfg_select! {
         mod wasi;
         pub use self::wasi::*;
     }
-    target_family = "wasm" => {
+    target_env = "wabi" => {
+        mod wabi;
+        pub use self::wabi::*;
+    },
+    all(target_family = "wasm", not(target_env = "wabi")) => {
         mod wasm;
         pub use self::wasm::*;
     }

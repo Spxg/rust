@@ -1658,6 +1658,7 @@ supported_targets! {
     ("thumbv7a-uwp-windows-msvc", thumbv7a_uwp_windows_msvc),
 
     ("wasm32-unknown-emscripten", wasm32_unknown_emscripten),
+    ("wasm32-web-wabi", wasm32_web_wabi),
     ("wasm32-unknown-unknown", wasm32_unknown_unknown),
     ("wasm32v1-none", wasm32v1_none),
     ("wasm32-wasip1", wasm32_wasip1),
@@ -1666,6 +1667,7 @@ supported_targets! {
     ("wasm32-wasip1-threads", wasm32_wasip1_threads),
     ("wasm32-wali-linux-musl", wasm32_wali_linux_musl),
     ("wasm64-unknown-unknown", wasm64_unknown_unknown),
+    ("wasm64-web-wabi", wasm64_web_wabi),
 
     ("thumbv6m-none-eabi", thumbv6m_none_eabi),
     ("thumbv7m-none-eabi", thumbv7m_none_eabi),
@@ -2028,6 +2030,7 @@ crate::target_spec_enum! {
         Windows = "windows",
         Xous = "xous",
         Zkvm = "zkvm",
+        Web = "web",
         Unknown = "unknown",
     }
     other_variant = Other;
@@ -2060,6 +2063,7 @@ crate::target_spec_enum! {
         P3 = "p3",
         Uclibc = "uclibc",
         V5 = "v5",
+        Wabi = "wabi",
         Unspecified = "",
     }
     other_variant = Other;

@@ -93,6 +93,9 @@ wasip3 = { version = '0.6.0', features = [
     'rustc-dep-of-std',
 ], default-features = false }
 
+[target.'cfg(target_env = "wabi")'.dependencies]
+wabii = { path = "/home/uharsn/repo/js-bindgen/client/wabii", features = ['rustc-dep-of-std', 'import'], default-features = false }
+
 [target.'cfg(target_os = "uefi")'.dependencies]
 r-efi = { version = "5.2.0", features = ['rustc-dep-of-std'] }
 r-efi-alloc = { version = "2.0.0", features = ['rustc-dep-of-std'] }

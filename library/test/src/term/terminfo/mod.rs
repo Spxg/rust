@@ -7,7 +7,7 @@ use std::path::Path;
 use std::{env, error, fmt, io};
 
 use parm::{Param, Variables, expand};
-use parser::compiled::{msys_terminfo, parse};
+use parser::compiled::{dummy_terminfo, parse};
 use searcher::get_dbpath_for_term;
 
 use super::{Terminal, color};
@@ -62,6 +62,10 @@ impl fmt::Display for Error {
 impl TermInfo {
     /// Creates a TermInfo based on current environment.
     pub(crate) fn from_env() -> Result<TermInfo, Error> {
+        if cfg!(target_env = "wabi") {
+            return Ok(dummy_terminfo("wabi-runner"));
+        }
+
         let term = match env::var("TERM") {
             Ok(name) => TermInfo::from_name(&name),
             Err(..) => return Err(Error::TermUnset),
@@ -69,7 +73,8 @@ impl TermInfo {
 
         if term.is_err() && env::var("MSYSCON").map_or(false, |s| "mintty.exe" == s) {
             // msys terminal
-            Ok(msys_terminfo())
+            // msys is a fork of an older cygwin version
+            Ok(dummy_terminfo("cygwin"))
         } else {
             term
         }

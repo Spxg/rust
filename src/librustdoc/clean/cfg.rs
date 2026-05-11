@@ -540,6 +540,7 @@ fn human_readable_target_os(os: Symbol) -> Option<&'static str> {
         Windows => "Windows",
         Xous => "Xous",
         Zkvm => "zero knowledge Virtual Machine",
+        Web => "Web",
         // tidy-alphabetical-end
         Unknown | Other(_) => return Option::None,
     })
@@ -610,6 +611,7 @@ fn human_readable_target_env(env: Symbol) -> Option<&'static str> {
         Sim => "Simulator",
         Uclibc => "uClibc",
         V5 => "V5",
+        Wabi => "WasmBindgen",
         // tidy-alphabetical-end
         Unspecified | Other(_) => return None,
     })

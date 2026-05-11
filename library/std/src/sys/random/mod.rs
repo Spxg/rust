@@ -102,6 +102,10 @@ cfg_select! {
         mod zkvm;
         pub use zkvm::fill_bytes;
     }
+    target_env = "wabi" => {
+        mod wabi;
+        pub use wabi::{fill_bytes, hashmap_random_keys};
+    }
     any(
         all(target_family = "wasm", target_os = "unknown"),
         target_os = "xous",
@@ -119,6 +123,7 @@ cfg_select! {
     target_os = "linux",
     target_os = "android",
     all(target_family = "wasm", target_os = "unknown"),
+    all(target_family = "wasm", target_os = "web"),
     all(target_os = "wasi", not(target_env = "p1")),
     target_os = "xous",
     target_os = "vexos",

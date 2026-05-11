@@ -318,7 +318,7 @@ pub(crate) fn parse(file: &mut dyn io::Read, longnames: bool) -> Result<TermInfo
 }
 
 /// Creates a dummy TermInfo struct for msys terminals
-pub(crate) fn msys_terminfo() -> TermInfo {
+pub(crate) fn dummy_terminfo(name: &str) -> TermInfo {
     let mut strings = HashMap::new();
     strings.insert("sgr0".to_string(), b"\x1B[0m".to_vec());
     strings.insert("bold".to_string(), b"\x1B[1m".to_vec());
@@ -329,7 +329,7 @@ pub(crate) fn msys_terminfo() -> TermInfo {
     numbers.insert("colors".to_string(), 8);
 
     TermInfo {
-        names: vec!["cygwin".to_string()], // msys is a fork of an older cygwin version
+        names: vec![name.to_string()],
         bools: HashMap::new(),
         numbers,
         strings,
